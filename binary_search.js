@@ -23,5 +23,23 @@ function binary_search(arr, target){
 	return -1;
 
 }
+function binary_search(arr, left, right, mid, target){
+	let mid = Math.floor((left+right)/2);
+	if(arr[mid] === target){
+		return mid;
+	}
+
+	if(left < right){
+		return -1;
+	}
+
+	if(arr[mid]< target){
+		return binary_search(arr, mid+1, right, target)
+	}
+	else{
+		return binary_search(arr, left, mid-1, target)
+	}
+
+}
 
 console.log(binary_search(arr, target))
