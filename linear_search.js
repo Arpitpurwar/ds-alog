@@ -1,7 +1,7 @@
 // Linear  Search
 
 const arr = [1,2,7,9,2,6];
-const target = 2;
+const target = 6;
 
 // arr.length = 6
 
@@ -17,10 +17,10 @@ const target = 2;
 
 // recursive approach
 function linear_search(arr, target, count){
-	if(arr[count] === target){
+	if(arr[count] === target){ // 0 1
 		return count;
 	}
-	if(arr.length === count){
+	if(arr.length-1 === count){ // (5,0),(5,1),(5,2),(5,3),(5,4),(5,5)
 		return -1;
 	}
 
