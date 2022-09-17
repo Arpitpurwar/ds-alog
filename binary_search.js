@@ -2,10 +2,10 @@ const arr = [1,2,4,5,7,9]
 const target = 2;
 
 
-function binary_search(arr, target){
+function binary_search_it(arr, target){
 	let left = 0;
 	let right = arr.length-1;
-
+	
 	while(left <= right){ // once left is greater than right stop the loop
 		let mid = Math.floor((right + left)/2)
 		console.log('start', left, mid, right)
@@ -23,13 +23,13 @@ function binary_search(arr, target){
 	return -1;
 
 }
-function binary_search(arr, left, right, mid, target){
+function binary_search(arr, left, right, target){
 	let mid = Math.floor((left+right)/2);
 	if(arr[mid] === target){
 		return mid;
 	}
 
-	if(left < right){
+	if(left > right){
 		return -1;
 	}
 
@@ -42,4 +42,4 @@ function binary_search(arr, left, right, mid, target){
 
 }
 
-console.log(binary_search(arr, target))
+console.log(binary_search(arr, 0, arr.length-1, target))
