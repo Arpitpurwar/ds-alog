@@ -53,8 +53,8 @@
             ans = ans - increment;
             increment = increment / 10;
         }
-        console.log(ans)
-        return ans;
+
+        return ans.toFixed(precision);
     }
 
-    console.log(squareRoot(24,4))
+    console.log(squareRoot(9,4))
