@@ -75,6 +75,22 @@ class BSTree {
 		}
 	}
 
+	preorderWithIteration(){
+		let currentNode = this.root;
+		const queue = [];
+		while(currentNode || queue.length > 0 ){
+			if(currentNode){
+				queue.push(currentNode);
+				currentNode = currentNode.left;
+			}
+			else{
+				currentNode = queue.pop();
+				console.log(currentNode.value);
+				currentNode = currentNode.right;
+			}
+		}
+	}
+	
 	isValidBST(){
 		let currentNode = this.root;
 		let queue = [];
