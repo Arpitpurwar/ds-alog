@@ -34,4 +34,4 @@ const bucketSort = (givenArray) => {
 
 let givenArray = [29, 34, 19, 39, 21, 41];
 bucketSort(givenArray);
-console.log(givenArray)
+console.log(givenArray);
