@@ -60,24 +60,28 @@ class BSTree {
 	}
 
 	inorderWithIteration(){
-		const currentNode = this.root;
-			function traverse(node){
-				if(node.left){
-					traverse(node.left)
-				}
-				console.log(node.value);
-				if(node.right){
-					traverse(node.right)
-				}
+		let currentNode = this.root;
+		const queue = [currentNode];
+		while(currentNode.left){
+			queue.push(currentNode.left);
+			currentNode = currentNode.left;
+		}
+		while(queue.length > 0){
+			const node = queue.pop();
+			console.log(node.value);
+			if(node.right){
+				queue.push(node.right)
 			}
-		traverse(currentNode)
+		}
 	}
 }
 
 const tree = new BSTree();
 tree.insert(15);
 tree.insert(7);
+tree.insert(8);
 tree.insert(21);
 const r = tree.insert(2);
 tree.inorderWithRecursion()
+tree.inorderWithIteration()
 console.log(r)
