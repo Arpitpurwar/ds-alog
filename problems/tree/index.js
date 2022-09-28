@@ -76,7 +76,25 @@ class BSTree {
 	}
 
 	isValidBST(){
-		
+		let currentNode = this.root;
+		let queue = [];
+		let prev = null;
+		while(currentNode || queue.length > 0){
+			if(currentNode){
+				queue.push(currentNode);
+				currentNode = currentNode.left;
+			}else{
+				currentNode = queue.pop();
+				if(prev != null && prev.value > currentNode.value){
+					return false
+				}
+				console.log(currentNode.value);
+				prev = currentNode;
+				currentNode = currentNode.right;
+			}
+		}
+
+		return true;
 	}
 }
 
@@ -87,7 +105,7 @@ tree.insert(10);
 tree.insert(8);
 tree.insert(21);
 const r = tree.insert(2);
-tree.inorderWithRecursion()
-tree.inorderWithIteration()
-tree.isValidBST()
-console.log(r)
+//tree.inorderWithRecursion()
+//tree.inorderWithIteration()
+const s = tree.isValidBST()
+console.log(s)
