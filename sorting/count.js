@@ -7,6 +7,8 @@ const countSort = (givenArray) => {
 		frequency[givenArray[i]] += 1;
 	}
 
+	// frequency = []
+
 	let i = 0, j = 0;
 	console.log(frequency)
 	while(i <= maxElement){
