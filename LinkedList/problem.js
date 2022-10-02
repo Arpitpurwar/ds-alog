@@ -141,25 +141,72 @@ class SingleLL{
 	reverse(){
 		let current = this.head;
 		this.tail = this.head
-		let reverse = null;
-		let prev;
+		let prev = null;
 		while(current){
+			let n = current.next;
+			current.next = prev;
 			prev = current;
-			current = current.next;
-			prev.next = reverse;
-			reverse = prev;
+			current = n;
 			
 		}
-		this.head = reverse;
+		this.head = prev;
 		return this.printList()
+	}
+
+	rotate(){
+		let current = this.head;
+
+		while(current.next){
+			current = current.next;
+		}
+		console.log(current);
+		let final = this.head;
+		this.head = this.head.next;
+		final.next = current;
+		console.log("final",final)
+		console.log(this.head);
+	}
+
+	findMiddle(){
+		let fast = this.head;
+		let slow = this.head;
+
+		while(fast != null  && fast.next != null){
+			slow = slow.next;
+			fast = fast.next.next
+		}
+
+		let curr = slow;
+		let prev = null;
+
+		while(curr){
+			let n = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = n;
+		}
+		
+		let temp = null;
+		let first = this.head;
+		let second = prev
+		while(second.next != null){
+			temp = first.next;
+			first.next = second;
+			first = temp;
+			temp = second.next;
+			second.next = first;
+			second = temp;
+		}
 	}
 }
 
 const ll = new SingleLL()
 ll.prepend(4);
 ll.prepend(5)
+ll.prepend(2)
 ll.prepend(6);
 ll.append(8);
 ll.insertAt(3,9);
-ll.reverse()
+ll.findMiddle()
 console.log(ll)
+ll.printList()
