@@ -184,6 +184,23 @@ class SingleLL{
 			second = temp;
 		}
 	}
+
+	detectLoop(){
+		let slow = this.head;
+		let fast = this.head.next;
+		while(slow !== fast){
+
+			if(fast == null || fast.next === null){
+				return false
+			}
+			
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+
+		return true;
+	}
+
 }
 
 const ll = new SingleLL()
@@ -193,6 +210,7 @@ ll.prepend(2)
 ll.prepend(6);
 ll.append(8);
 ll.insertAt(3,9);
-ll.rotate()
-console.log(ll)
+ll.detectLoop()
+//ll.rotate()
+console.log(ll.detectLoop())
 ll.printList()
