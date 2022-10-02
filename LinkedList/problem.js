@@ -154,20 +154,6 @@ class SingleLL{
 	}
 
 	rotate(){
-		let current = this.head;
-
-		while(current.next){
-			current = current.next;
-		}
-		console.log(current);
-		let final = this.head;
-		this.head = this.head.next;
-		final.next = current;
-		console.log("final",final)
-		console.log(this.head);
-	}
-
-	findMiddle(){
 		let fast = this.head;
 		let slow = this.head;
 
@@ -207,6 +193,6 @@ ll.prepend(2)
 ll.prepend(6);
 ll.append(8);
 ll.insertAt(3,9);
-ll.findMiddle()
+ll.rotate()
 console.log(ll)
 ll.printList()
