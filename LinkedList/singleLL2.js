@@ -109,8 +109,7 @@ class SingleLL{
 			prev = current
 			current = current.next;
 		}	
-		let removNode = current;
-		removNode = null;
+		current = null;
 		prev.next = null;
 		this.tail = prev;
 		this.length--;
