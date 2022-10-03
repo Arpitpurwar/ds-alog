@@ -55,7 +55,7 @@ class SingleLL{
 	insertAt(position, data){
 		if(position === 0){
 			return this.prepend(data);
-		}else if(position === this.length){
+		}else if(position === this.length-1){
 			return this.append(data)
 		}else{
 			let i = 0;
