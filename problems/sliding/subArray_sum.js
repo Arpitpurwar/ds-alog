@@ -20,7 +20,6 @@ let sum = 0;
 while(j < arr.length){
 	sum += arr[j];
 	if(j-i+1 == k){
-		console.log(j, i)
 		maxSum=Math.max(maxSum,sum);
 		sum=sum-arr[i];
 		i++;
