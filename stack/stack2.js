@@ -36,6 +36,19 @@ class Stack{
 	isEmpty(){
 		return this.top === -1;
 	}
+
+	insertAtBottom(value){
+		if(this.isEmpty()){
+			this.push(value);
+			return;
+		}
+		else{
+			let temp = this.peak();
+			this.pop();
+			this.insertAtBottom(value);
+			this.push(temp);
+		}
+	}
 }
 
 
@@ -46,4 +59,9 @@ stack.push(2);
 stack.push(3);
 stack.push(1);
 stack.print()
+// stack.pop();
+// stack.pop()
+stack.insertAtBottom(0);
+console.log("=====>>> after inserting new at bottom")
+stack.print();
 console.log(stack);
