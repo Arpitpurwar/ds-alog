@@ -1,11 +1,21 @@
 // arr = [2,3,7,8,10]
-// sum = 5
-// search for any subset exist if we add that subset so get sum as 5
+// search for equal sum subset exist if we add both subset shoudl get same sum 
+// Leet code https://leetcode.com/problems/partition-equal-subset-sum/
 
 let arr = [2,3,7,8,10];
-let sum = 2;
 let n = arr.length;
 
+let sum  = 0;
+
+for(let i = 0; i < arr.length; i++){
+	sum+= arr[i];
+}
+
+if(sum%2 !== 0){
+	return false;
+}
+
+sum = sum/2;
 let matrix = []
 for(let i = 0; i < n+1; i++){
 		matrix[i] = []
@@ -32,6 +42,3 @@ for(let i = 1; i< n+1; i++){
 		}
 	}
 }
-
-console.table(matrix);
-console.log(matrix[n][sum])
