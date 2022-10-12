@@ -64,4 +64,51 @@ stack.print()
 stack.insertAtBottom(0);
 console.log("=====>>> after inserting new at bottom")
 stack.print();
-console.log(stack);
+
+
+function sortSlack(s){
+	if(!s.isEmpty()){
+		let temp = s.peak();
+		s.pop();
+		sortSlack(s);
+		sortedInsert(s,temp);
+	}
+	return;
+}
+
+function sortedInsert(s,x){
+	if(s.isEmpty() || s.peak() < x){
+		s.push(x);
+		return;
+	}
+	else{
+		let temp = s.peak();
+		s.pop();
+		sortedInsert(s,x);
+		s.push(temp);
+		return;
+	}
+}
+// sortSlack(stack)
+
+let max = stack.peak();
+let min = stack.peak();
+const maxMin = (stack) => {
+  if(!stack.isEmpty()){
+	let temp = stack.peak();
+	stack.pop();
+	maxMin(stack)
+	if(temp > max){
+		max = temp;
+	}else if(temp < min){
+		min = temp;
+	}
+	stack.push(temp);
+  }
+  return;
+};
+
+maxMin(stack)
+
+console.log(max, min);
+stack.print()
