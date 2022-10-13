@@ -49,6 +49,7 @@ class Stack{
 			this.push(temp);
 		}
 	}
+
 }
 
 
@@ -89,7 +90,12 @@ function sortedInsert(s,x){
 		return;
 	}
 }
-// sortSlack(stack)
+sortSlack(stack)
+
+
+
+
+
 
 let max = stack.peak();
 let min = stack.peak();
