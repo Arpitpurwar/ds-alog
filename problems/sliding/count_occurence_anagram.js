@@ -25,6 +25,7 @@ while(j < str1.length){
 			distinctValues--;
 		}
 	}
+	console.log("before",map,distinctValues,j,i)
 	if(j-i+1 === str2.length){
 		if(distinctValues === 0){
 			ans++;
@@ -37,6 +38,7 @@ while(j < str1.length){
 				distinctValues++;
 			}
 		}
+		console.log("after",map, distinctValues, j, i);
 		i++;
 	}
 	j++;
