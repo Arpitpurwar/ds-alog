@@ -4,8 +4,10 @@ var longestSubarray = function (nums, limit) {
     max = [],
     min = [],
     num = 0;
+
   while (right < nums.length) {
-    num = nums[right++];
+    num = nums[right];
+    right++;
 	console.log("before",num,right,left);
     while (max.length && num > max[max.length - 1]) max.pop();
     while (min.length && num < min[min.length - 1]) min.pop();
@@ -15,9 +17,10 @@ var longestSubarray = function (nums, limit) {
     if (max[0] - min[0] <= limit){
 		continue;
 	}
-    num = nums[left++];
+    num = nums[left];
     if (max[0] == num) max.shift();
     if (min[0] == num) min.shift();
+    left++;
 	console.log("after", num, right, left);
 	console.log("after array", max, min);
   }
