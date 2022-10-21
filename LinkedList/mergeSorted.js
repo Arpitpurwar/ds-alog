@@ -1,20 +1,45 @@
-// https://leetcode.com/problems/merge-two-sorted-lists/
-var mergeTwoLists = function(list1, list2) {
-    let dummy = new ListNode(-Infinity), prev = dummy;
-    while (list1 && list2) {
-     if (list1.val <= list2.val){
-         prev.next = list1;
-         prev = list1;
-         list1 = list1.next;
-         
-     } else {
-         prev.next = list2;
-         prev = list2;
-         list2 = list2.next;
-        }
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function (list1, list2) {
+  let mergedList = new ListNode();
+  let ptr = mergedList;
+
+  let l1 = list1;
+  let l2 = list2;
+
+  while (l1 && l2) {
+    if (l1.val <= l2.val) {
+      ptr.next = l1;
+      ptr = ptr.next;
+      l1 = l1.next;
+    } else if (l1.val > l2.val) {
+      ptr.next = l2;
+      ptr = ptr.next;
+      l2 = l2.next;
     }
-    
-    if (!list1) prev.next = list2;
-    if (!list2) prev.next = list1;
-    return dummy.next
+  }
+
+  while (l1 != null) {
+    ptr.next = l1;
+    ptr = ptr.next;
+    l1 = l1.next;
+  }
+
+  while (l2 != null) {
+    ptr.next = l2;
+    ptr = ptr.next;
+    l2 = l2.next;
+  }
+
+  return mergedList.next;
 };
