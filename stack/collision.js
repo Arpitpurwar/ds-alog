@@ -12,8 +12,10 @@ function onCollision(asteroids) {
         resultStack.length != 0 &&
         resultStack[resultStack.length - 1] > 0 &&
         resultStack[resultStack.length - 1] < Math.abs(x)
-      )
+      ){
         resultStack.pop();
+      }
+        
       //Insert the element in the stack only if the last most element is less than 0
       if (resultStack.length == 0 || resultStack[resultStack.length - 1] < 0)
         resultStack.push(x);

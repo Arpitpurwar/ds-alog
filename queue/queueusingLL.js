@@ -24,6 +24,7 @@ function dequeue() {
   if (front == null) return;
 
   let temp = front;
+  temp = null;
   front = front.next;
 
   if (front == null) rear = null;
