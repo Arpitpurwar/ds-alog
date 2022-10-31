@@ -67,11 +67,11 @@ console.log("=====>>> after inserting new at bottom")
 stack.print();
 
 
-function sortSlack(s){
+function sortStack(s){
 	if(!s.isEmpty()){
 		let temp = s.peak();
 		s.pop();
-		sortSlack(s);
+		sortStack(s);
 		sortedInsert(s,temp);
 	}
 	return;
@@ -90,7 +90,7 @@ function sortedInsert(s,x){
 		return;
 	}
 }
-sortSlack(stack)
+sortStack(stack)
 
 
 
