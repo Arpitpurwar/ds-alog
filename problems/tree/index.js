@@ -61,14 +61,14 @@ class BSTree {
 
 	inorderWithIteration(){
 		let currentNode = this.root;
-		const queue = [];
-		while(currentNode || queue.length > 0 ){
+		const stack = [];
+		while(currentNode || stack.length > 0 ){
 			if(currentNode){
 				queue.push(currentNode);
 				currentNode = currentNode.left;
 			}
 			else{
-				currentNode = queue.pop();
+				currentNode = stack.pop();
 				console.log(currentNode.value);
 				currentNode = currentNode.right;
 			}
