@@ -62,7 +62,7 @@ class BSTree {
     const stack = [];
     while (currentNode || stack.length > 0) {
       if (currentNode) {
-        queue.push(currentNode);
+        stack.push(currentNode);
         currentNode = currentNode.left;
       } else {
         currentNode = stack.pop();
