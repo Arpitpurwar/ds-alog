@@ -134,7 +134,7 @@ class BSTree {
    */
   postOrderWithIteration() {
     let S = [];
-	let list = []
+    let list = [];
     S.push(this.root);
     let prev = null;
     while (S.length != 0) {
@@ -170,7 +170,24 @@ class BSTree {
       prev = current;
     }
 
-	return list;
+    return list;
+  }
+
+  findKey() {
+    let node = this.root;
+    if (node == null) return false;
+    if (node.data == key) return true;
+    var left = find(node.left, key);
+    var right = find(node.right, key);
+    return left || right;
+  }
+
+  height() {
+    let node = this.root;
+    if (node == null) return -1;
+    var left = height(node.left);
+    var right = height(node.right);
+    return Math.max(left, right) + 1;
   }
 }
 
