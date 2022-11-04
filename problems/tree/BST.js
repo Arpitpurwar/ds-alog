@@ -55,4 +55,12 @@ var binarySearchTreeMethods = {
     }
     return node;
   },
+  findMinValue: function (root) {
+    let minv = root.key;
+    while (root.left != null) {
+      minv = root.left.key;
+      root = root.left;
+    }
+    return minv;
+  },
 };

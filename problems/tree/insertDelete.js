@@ -79,61 +79,105 @@ function Delete(root, key) {
   }
 }
 
-function efficientDelete(root, key){
-	if(root === null){
-		return;
-	}
+function efficientDelete(root, key) {
+  if (root === null) {
+    return;
+  }
 
-	if (root.left == null && root.right == null) {
-      if (root.key == key) {
-        root = null;
-        return;
-      } else return;
+  if (root.left == null && root.right == null) {
+    if (root.key == key) {
+      root = null;
+      return;
+    } else return;
+  }
+
+  let currNode = null;
+  let keyNode = null;
+  let pr = null;
+  let pl = null;
+
+  let queue = [root];
+
+  while (queue.length) {
+    currNode = queue[0];
+    queue.shift();
+
+    if (currNode.key === key) {
+      keyNode = currNode;
     }
 
-	let currNode = null;
-	let keyNode = null;
-	let pr = null;
-	let pl = null;
+    if (currNode.left) {
+      queue.push(currNode.left);
+      pl = currNode;
+    }
 
-	let queue = [root];
+    if (currNode.right) {
+      queue.push(currNode.right);
+      pr = currNode;
+    }
+  }
 
-	while(queue.length){
-		currNode = queue[0];
-		queue.shift();
+  if (keyNode) {
+    keyNode.key = currNode.key;
+    if (pr.right.key === currNode.key) {
+      pr.right = null;
+      return root;
+    }
+    if (pl.left.key === currNode.key) {
+      pl.left = null;
+      return root;
+    }
+  }
+}
 
-		if(currNode.key === key){
-			keyNode = currNode;
-		}
+function efficientDeletewithOneParent(root, key) {
+  if (root === null) {
+    return;
+  }
 
-		if(currNode.left){
-			queue.push(currNode.left);
-			pl = currNode;
-		}
+  if (root.left == null && root.right == null) {
+    if (root.key == key) {
+      root = null;
+      return;
+    } else return;
+  }
 
-		if(currNode.right){
-			queue.push(currNode.right);
-			pr = currNode;
-		}
-	}
+  let currNode = null;
+  let keyNode = null;
+  let p = null;
 
-	if(keyNode){
-		console.log('c',currNode);
-		console.log('key',keyNode);
-		console.log('pr',pr);
-		console.log('pl',pl);
-		keyNode.key = currNode.key;
-		if(pr.right.key === currNode.key){
-			pr.right = null;
-			return root;
-		}
-		if(pl.left.key === currNode.key){
-			pl.left = null;
-			return root;
-		}
-	}
+  let queue = [root];
 
+  while (queue.length) {
+    currNode = queue[0];
+    queue.shift();
 
+    if (currNode.key === key) {
+      keyNode = currNode;
+    }
+
+    if (currNode.left) {
+      queue.push(currNode.left);
+      p = currNode;
+    }
+
+    if (currNode.right) {
+      queue.push(currNode.right);
+      p = currNode;
+    }
+  }
+
+  if (keyNode) {
+    keyNode.key = currNode.key;
+    if (p.right.key === currNode.key) {
+      p.right = null;
+      return root;
+    }
+    if (p.left.key === currNode.key) {
+      p.left = null;
+      return root;
+    }
+  }
 }
 
 root = new Node(10);
@@ -152,3 +196,10 @@ efficientDelete(root, key);
 
 console.log("Inorder traversal " + "after deletion : ");
 inorder(root);
+
+class TreeNode {
+  constructor(val, left, right = null) {
+    this.val = val;
+    this.left = null;
+  }
+}

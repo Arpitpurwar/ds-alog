@@ -172,26 +172,10 @@ class BSTree {
 
     return list;
   }
-
-  findKey() {
-    let node = this.root;
-    if (node == null) return false;
-    if (node.data == key) return true;
-    var left = find(node.left, key);
-    var right = find(node.right, key);
-    return left || right;
-  }
-
-  height() {
-    let node = this.root;
-    if (node == null) return -1;
-    var left = height(node.left);
-    var right = height(node.right);
-    return Math.max(left, right) + 1;
-  }
 }
 
 const tree = new BSTree();
+
 tree.insert(15);
 tree.insert(7);
 tree.insert(10);
@@ -203,4 +187,22 @@ tree.BFS();
 //tree.inorderWithRecursion()
 //tree.inorderWithIteration()
 const s = tree.isValidBST();
+
+
+  function find(node, key) {
+    if (node == null) return false;
+    if (node.value == key) return true;
+    var left = find(node.left, key);
+    var right = find(node.right, key);
+    return left || right;
+  }
+
+ function height() {
+   let node = this.root;
+   if (node == null) return -1;
+   var left = height(node.left);
+   var right = height(node.right);
+   return Math.max(left, right) + 1;
+ }
+tree.find(tree,11);
 // console.log(s)
