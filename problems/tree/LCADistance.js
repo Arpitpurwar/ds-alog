@@ -11,7 +11,7 @@ function LCA(currentNode, p, q) {
   } else if (right === null) {
     return left;
   } else {
-    return root;
+    return currentNode;
   }
 }
 

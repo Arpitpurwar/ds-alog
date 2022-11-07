@@ -14,15 +14,29 @@ function construct(pre, ino, plo, phi, ilo, ihi) {
   }
   let newNode = new TreeNode();
   newNode.val = pre[plo];
-  let si = -1;
+  let elementFound = -1;
   for (let i = ilo; i <= ihi; i++) {
     if (pre[plo] == ino[i]) {
-      si = i;
+     elementFound = i;
       break;
     }
   }
-  let numbersLeft = si - ilo;
-  newNode.left = construct(pre, ino, plo + 1, plo + numbersLeft, ilo, si - 1);
-  newNode.right = construct(pre, ino, plo + numbersLeft + 1, phi, si + 1, ihi);
+  let numbersLeft = elementFound - ilo;
+  newNode.left = construct(
+    pre,
+    ino,
+    plo + 1,
+    plo + numbersLeft,
+    ilo,
+    elementFound - 1
+  );
+  newNode.right = construct(
+    pre,
+    ino,
+    plo + numbersLeft + 1,
+    phi,
+    elementFound + 1,
+    ihi
+  );
   return newnode;
 }

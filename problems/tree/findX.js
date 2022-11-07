@@ -1,5 +1,5 @@
 let arr = [];
-function findPath(root, arr, x) {
+function hasPath(root, arr, x) {
   if (root == null) return false;
   arr.push(root.data);
   if (root.data == x) return true;
@@ -7,3 +7,5 @@ function findPath(root, arr, x) {
   arr.pop();
   return false;
 }
+
+console.log(arr);
