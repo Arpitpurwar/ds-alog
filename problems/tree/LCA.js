@@ -1,10 +1,4 @@
-let ans = null;
-var lowestCommonAncestor = function (root, p, q) {
-  recurseTree(root, p, q);
-  return this.ans;
-};
-
-function recurseTree(currentNode, p, q) {
+function LCA(currentNode, p, q) {
   if (currentNode == null || currrentNode === p || currentNode === q) {
     return currentNode;
   }
