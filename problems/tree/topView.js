@@ -2,7 +2,7 @@ class treeNode {
   constructor(data) {
     this.data = data;
     this.left = this.right = null;
-    this.hd = 0;
+    this.vl = 0;
   }
 }
 
@@ -10,25 +10,25 @@ function getTopview(root) {
   if (root == null) return;
   let q = [];
   let m = new Map();
-  let hd = 0;
-  root.hd = hd;
+  let vl = 0;
+  root.vl = vl;
   q.push(root);
 
   while (q.length != 0) {
     root = q[0];
-    hd = root.hd;
-    if (!m.has(hd)) m.set(hd, root.data);
+    vl = root.vl;
+    if (!m.has(vl)) m.set(vl, root.data);
     if (root.left) {
-      root.left.hd = hd - 1;
+      root.left.vl = vl - 1;
       q.push(root.left);
     }
     if (root.right) {
-      root.right.hd = hd + 1;
+      root.right.vl = vl + 1;
       q.push(root.right);
     }
     q.shift();
   }
-
+  console.log('map', m)
   let arr = Array.from(m);
   console.log(arr);
   arr.sort(function (a, b) {

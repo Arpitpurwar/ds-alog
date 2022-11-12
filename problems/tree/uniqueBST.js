@@ -12,7 +12,7 @@ function constructTrees(start, end) {
   var list = [];
 	console.log(start,end)
   if (start > end) {
-    list.push(null);
+    list.push(new Node(null));
     return list;
   }
 
@@ -27,6 +27,7 @@ function constructTrees(start, end) {
     /* constructing right subtree */
     var rightSubtree = constructTrees(i + 1, end);
 	console.log(i, leftSubtree, rightSubtree)
+
     for (var j = 0; j < leftSubtree.length; j++) {
       var left = leftSubtree[j];
       for (var k = 0; k < rightSubtree.length; k++) {
@@ -45,13 +46,7 @@ function constructTrees(start, end) {
   }
   return list;
 }
-// function preorder(root) {
-//   if (root != null) {
-//     console.log(root);
-//     preorder(root.left);
-//     preorder(root.right);
-//   }
-// }
+
 let N = 3;
 var totalTreesFrom1toN = constructTrees(1, N);
-console.log("Pre-order traversal: ", totalTreesFrom1toN.length);
+console.log("result ", totalTreesFrom1toN.length);
