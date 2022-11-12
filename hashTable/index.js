@@ -19,12 +19,13 @@ class HashTable {
   }
   get(key) {
     const target = this._hash(key);
+    console.log(this.hashTable)
     return this.hashTable[target];
   }
 
   remove(key) {
     const index = this._hash(key);
-    if (this.hashTable[index] && this.table[index].length) {
+    if (this.hashTable[index] && this.hashTable[index].length) {
       this.hashTable[index] = [];
       this.tableSize--;
       return true;
