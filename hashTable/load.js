@@ -3,7 +3,6 @@ class HashTable {
     this.tableSize = 5;
     this.hashTable = new Array(this.tableSize);
     this.elementSize = 0;
-    this.loadFactor = 0;
     this.MAX_LOAD_FACTOR = 0.75;
   }
 
