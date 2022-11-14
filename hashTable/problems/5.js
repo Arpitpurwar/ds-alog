@@ -10,6 +10,7 @@ Input: nums = [0,3,7,2,5,8,4,6,0,1]
 Output: [0, 1, 2, 3, 4, 5, 6, 7, 8]
 TC: O(n)
 SC: O(n)
+ex - 102,4,100,1,101,3,2
  */
 var longestConsecutive = function (arr) {
   let map = new Map();
