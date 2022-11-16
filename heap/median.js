@@ -1,7 +1,7 @@
 /**
 Reference: https://leetcode.com/problems/find-median-from-data-stream/
 Problem – You will get an integer every second and you have to return the median immediately for all the
-integers that came since time t = 0.
+integers that came since time t = 0
 Example -
 Input - 1
 Output - 1 //[1]. So, median is 1.

@@ -12,7 +12,7 @@ Input - ["Rohit","Rohit","Rohit","Rohit","Rohit","Rohit","Ankit","Astha","Vishwa
 Output: Rohit -> Ankit -> Astha -> Rohit -> Vishwa -> Arnab -> Rohit -> Sanket -> Riya -> Rohit -> idle -> idle ->
 Rohit -> idle -> Rohit
 
-Time Complexity:,O(result),-->,As,we,only,co2pute,till,the,ti2e,counter,is,incre2ented.
+Time Complexity:,O(result),--> As,we,only,co2pute,till,the,ti2e,counter,is,incre2ented.
 See,there,will,not,be,always,fixed,co2plexity,as,it,2ostly,depends,on,X,as,well.,So2e,ti2e,just,add,the,
 idle,ti2e,we,are,incre2enting,ti2e.,But,we,can,deduce,the,co2plexity,as,O((*X)logK).,ow,,here,,is,the,
 total,nu2ber,of,ele2ents,,X,is,the,blocked,ti2e,and,k,is,distinct,e2ployees.

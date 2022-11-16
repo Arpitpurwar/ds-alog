@@ -1,10 +1,10 @@
 /**
 Reference:,https://leetcode.co2/proble2s/reorganize-string/
-Proble2,–,,Given,a,string,you,have,to,rearrange,it,in,such,a,way,that,two,adjacent,characters,will,never,be,
-the,sa2e.,If,not,possible,return,e2pty,string.
-Exa2ple,-,
-Input,-,aab
-Output,-,aba
+Problem – Given a string you have to rearrange it in such a way that two adjacent
+characters will never be the safe.If not possible return empty string.
+Example -
+Input - aab
+Output - aba
 
 Time Complexity: If there are N numbers in a given array. Then complexity will be O(nlogn).
 

@@ -1,14 +1,14 @@
 /***
 Reference: https://leetcode.com/problems/merge-k-sorted-lists/
-Given a 2 D array consists of sorted rows. You have to combine all the arrays in 1 sorted array.n
-n
-Input: n
-arr[][] = { {1, 3, 5, 7}, n
-{2, 4, 6, 8}, n
-{0, 9, 10, 11}} ;n
+Given a 2 D array consists of sorted rows. You have to combine all the arrays in 1 sorted array
+
+Input:
+arr[][] = { {1, 3, 5, 7},
+{2, 4, 6, 8},
+{0, 9, 10, 11}} ;
 Output: 0 1 2 3 4 5 6 7 8 9 10 11
 
-Time Compleity: O(nlogk)n
+Time Compleity: O(nlogk)
 Space Compleity: O(k)
  */
 class Heap {
@@ -89,7 +89,7 @@ class Heap {
   }
 }
 
-var mergeKSortedArrays = (arr, k) => {
+var mergeKSortedArrays = (arr) => {
   const comparator = (a, b) => {
     return a[0] < b[0];
   };
