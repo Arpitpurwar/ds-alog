@@ -34,8 +34,9 @@ class Heap {
 
     if (this.comparator(data[index], data[parentIndex])) {
       this.swap(parentIndex, index);
-      this.bottomUp(parentIndex);
+      return this.bottomUp(parentIndex);
     }
+    return index;
   }
 
   topBottom(index) {
@@ -56,8 +57,9 @@ class Heap {
 
     if (nextIndexTochoose !== index) {
       this.swap(index, nextIndexTochoose);
-      this.topBottom(nextIndexTochoose);
+      return this.topBottom(nextIndexTochoose);
     }
+    return index;
   }
 
   size() {
@@ -97,10 +99,15 @@ class Heap {
 
   remove(value) {
     let index = this.data.indexOf(value);
+    if (index === this.data.length - 1) {
+      return this.data.pop();
+    }
     this.data[index] = this.data[this.data.length - 1];
     this.data.pop();
+    this.topBottom(this.bottomUp(index));
   }
 }
+
 
 const medianSlidingWindow = (nums, k) => {
   const minComparator = (a, b) => {
