@@ -112,9 +112,11 @@ let leastInterval = (employee, X) => {
     return a[1] > b[1];
   };
   let pq = new Heap(comparator);
+
   for (let key in employee_counter) {
     pq.add([key, employee_counter[key]]);
   }
+
   let result = [];
 
   while (pq.size() > 0) {
@@ -129,7 +131,9 @@ let leastInterval = (employee, X) => {
         if (root[1] > 0) {
           add_back.push(root);
         }
-      } else result.push("idle");
+      } else {
+        result.push("idle")
+    };
       if (pq.size() == 0 && add_back.length == 0) {
         break;
       }

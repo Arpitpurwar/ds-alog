@@ -149,9 +149,9 @@ const medianSlidingWindow = (nums, k) => {
       }
       j++;
       if (max.contains(nums[i - k + 1])) {
-        max.poll(nums[i - k + 1]);
+        max.remove(nums[i - k + 1]);
       } else {
-        min.poll(nums[i - k + 1]);
+        min.remove(nums[i - k + 1]);
       }
     }
   }

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "dustjs-linkedin": "git+ssh://git@github.paypal.com:mkarunaithi/dustjs.git"
+  }
+}
