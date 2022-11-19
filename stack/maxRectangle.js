@@ -14,7 +14,7 @@ var maximalRectangle = function (matrix) {
 
   for (i = 1; i < row; i++) {
     for (j = 0; j < col; j++) {
-      if (matrix[i][j] === "1") {
+      if (matrix[i][j] === 1) {
         matrix[i][j] = parseInt(matrix[i][j]) + parseInt(matrix[i - 1][j]);
       }
     }
@@ -35,7 +35,6 @@ let MAH = function (arr) {
 
   let lme = left(arr);
   let rme = right(arr);
-
   for (let i = 0; i < arr.length; i++) {
     let temp = rme[i] - lme[i] - 1;
     ans = Math.max(ans, temp * parseInt(arr[i]));
@@ -93,3 +92,6 @@ function right(arr) {
 
   return ans.reverse();
 }
+
+let mat = [[0,1,1,0,0],[1,1,1,1,1],[1,1,1,1,1],[1,1,0,0,1]]
+maximalRectangle(mat);
