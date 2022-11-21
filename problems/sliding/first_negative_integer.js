@@ -2,6 +2,11 @@
 // k = 3
 // output = print first negative integer in a window size of K if there is no negative integer
 // print 0.
+// Time Complexity –
+// If the number of elements in the input array is n then, the time complexity will be O(n)
+
+// Space Complexity –
+// If the size of the window given is k then, the space complexity will be O(k)
 
 // const arr = [12, 1, -7, 8, -15, 30, 16, -28];
 // const k = 3;
@@ -29,24 +34,24 @@
 const arr = [12, -1, -7, 8, -15, 30, 16, 28];
 const k = 3;
 
-let i=0,j= 0;
-let negatives = []
-while(j < arr.length){
-	if(arr[j] < 0){
-		negatives.push(arr[j]);
-	}
-	if(j-i+1 == k){
-		if(negatives.length === 0){
-			console.log('No Negative index for this window', 0)
-		}
-		if(negatives.length > 0){
-			console.log('first negative', negatives[0])
-		}
-		if(negatives[0] === arr[i]){
-			negatives.shift()
-		}
-		i++;
-	}
-	j++;
-	
+let i = 0,
+  j = 0;
+let negatives = [];
+while (j < arr.length) {
+  if (arr[j] < 0) {
+    negatives.push(arr[j]);
+  }
+  if (j - i + 1 == k) {
+    if (negatives.length === 0) {
+      console.log("No Negative index for this window", 0);
+    }
+    if (negatives.length > 0) {
+      console.log("first negative", negatives[0]);
+    }
+    if (negatives[0] === arr[i]) {
+      negatives.shift();
+    }
+    i++;
+  }
+  j++;
 }
