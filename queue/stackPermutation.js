@@ -27,7 +27,7 @@ function stackPermutation(ip, op, n) {
   for (let i = 0; i < n; i++) {
     output.push(op[i]);
   }
-  console.log("input", input, "output", output);
+  
   let tempStack = [];
   while (input.length != 0) {
     let ele = input.shift(); // 4,5

@@ -60,8 +60,11 @@ class SingleLL{
 }
 
 const ll = new SingleLL()
-ll.prepend(4);
+ll.prepend(6);
 ll.prepend(5);
-ll.append(6)
+ll.prepend(4);
+ll.prepend(3);
+ll.prepend(2);
+ll.prepend(1);
 console.log("LL", ll)
 
