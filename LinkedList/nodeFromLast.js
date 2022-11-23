@@ -66,9 +66,10 @@ ll.prepend(2);
 ll.prepend(1);
 
 function kthNodefromEnd(head, k) {
-  let first = (second = head);
+  let first = head;
+  let second = head;
 
-  while (first && k > 0) {
+  while (first && k > 1) {
     first = first.next;
     k--;
   }
@@ -83,4 +84,4 @@ function kthNodefromEnd(head, k) {
   return second;
 }
 
-console.log(kthNodefromEnd(ll.head, 1));
+console.log('ans',kthNodefromEnd(ll.head, 5));

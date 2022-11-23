@@ -78,14 +78,14 @@ function pairSwap(head) {
     const nextToNext = next.next;
     //Change the address of the selected nodes
     next.next = currentNode;
-    currentNode.next = nextToNext;
+    .next = nextToNextcurrentNode;
     //Update the pointer
     if (prevNode) {
       prevNode.next = next;
     } else {
       ll.head = next;
     }
-    console.log("head", head, ll.head);
+
     prevNode = currentNode;
     currentNode = nextToNext;
   }
