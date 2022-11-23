@@ -65,22 +65,32 @@ ll.prepend(3);
 ll.prepend(2);
 ll.prepend(1);
 
-function kthNodefromEnd(head, k) {
-  let first = (second = head);
+function pairSwap(head) {
+  if (!head || !head.next) {
+    return head;
+  }
+  let currentNode = head;
+  let prevNode = null;
 
-  while (first && k > 0) {
-    first = first.next;
-    k--;
+  while (currentNode && currentNode.next) {
+    //Select the nodes to swap
+    const next = currentNode.next;
+    const nextToNext = next.next;
+    //Change the address of the selected nodes
+    next.next = currentNode;
+    currentNode.next = nextToNext;
+    //Update the pointer
+    if (prevNode) {
+      prevNode.next = next;
+    } else {
+      ll.head = next;
+    }
+    console.log("head", head, ll.head);
+    prevNode = currentNode;
+    currentNode = nextToNext;
   }
-  if (!first) {
-    return null;
-  }
-  while (first) {
-    first = first.next;
-    second = second.next;
-  }
-
-  return second;
+  console.log(ll);
+  return ll.printList();
 }
 
-console.log(kthNodefromEnd(ll.head, 1));
+console.log(pairSwap(ll.head));
