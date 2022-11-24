@@ -11,7 +11,7 @@ Output -> [ -60, -45, -32, -12, -5, 0]
  */
 function sortArray(arr, n, A, B, C) {
   for (let i = 0; i < n; i++){
-	arr[i] = A * arr[i] * arr[i] + B * arr[i] + C;
+	  arr[i] = A * arr[i] * arr[i] + B * arr[i] + C;
   } 
 
   let index = -1;

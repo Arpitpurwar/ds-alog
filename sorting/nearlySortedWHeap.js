@@ -113,7 +113,7 @@ function kSort(arr, n, k) {
 
   let index = 0;
   for (let i = k + 1; i < n; i++) {
-    arr[index++] = priorityQueue.peek();
+    arr[index++] = priorityQueue.peek(); // arr[0] = 14 --> index=1
     priorityQueue.poll();
     priorityQueue.add(arr[i]);
   }
