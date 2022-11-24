@@ -27,9 +27,6 @@ function maxDifference(array, n, k) {
   for (let i = n - 1; i > n - k - 1; i--) {
     sumLargest += array[i];
   }
-  console.log("sumsmallest", sumSmallest);
-  console.log("sumLargest", sumLargest);
-  console.log("sum", sum);
 
   return Math.max(
     Math.abs(sumSmallest - (sum - sumSmallest)),
