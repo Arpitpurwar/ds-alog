@@ -7,26 +7,20 @@ function findMinIdx(rotatedSortedArr) {
   }
 
   if (rotatedSortedArr[left] < rotatedSortedArr[right]) {
+    // case 1
     return 0;
   }
 
-  while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
-
-    if (rotatedSortedArr[mid] < rotatedSortedArr[mid - 1]) {
-      return mid;
-    }
-
-    if (rotatedSortedArr[mid] > rotatedSortedArr[mid + 1]) {
-      return mid + 1;
-    }
-
-    if (rotatedSortedArr[mid] < rotatedSortedArr[left]) {
-      right = mid - 1;
-    } else {
+  while (left < right) {
+    let mid = left + (right - left) / 2;
+    if (rotatedSortedArr[mid] > rotatedSortedArr[right]) {
       left = mid + 1;
-    }
+    } // case 2
+    else {
+      right = mid;
+    } // case 3
   }
+  return left;
 }
 
 function binarySearch(nums, target, left, right) {

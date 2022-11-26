@@ -1,3 +1,30 @@
+/**
+ * 
+We are given a binary search tree (BST), where we have to find the lowest common ancestor of two given nodes from the BST. 
+Common definition of LCA is: “The lowest common ancestor is a node which is a common ancestor to both the nodes, here the node itself can also be considered as common ancestor”
+
+
+Time Complexity: O(N), worst case we traverse through each node
+Space
+Input: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+Output: 
+6
+
+Input: 
+root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+Output: 2
+
+Constraints:
+ 
+The number of nodes in the tree is in the range [2, 105].
+-109 <= Node.val <= 109
+All Node.val are unique.
+p != q
+p and q will exist in the BST.
+
+ Complexity: O(1) We always node regardless of the size of BST.
+
+ */
 function lowestCommonAncestor(root, p, q) {
   const pVal = p.val;
   const qVal = q.val;
