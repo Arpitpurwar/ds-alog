@@ -26,13 +26,13 @@ p and q will exist in the BST.
 
  */
 function lowestCommonAncestor(root, p, q) {
-  const pVal = p.val;
-  const qVal = q.val;
+  const pVal = p.val; // 10
+  const qVal = q.val; // 14
 
-  let currentNode = root;
+  let currentNode = root; // 8 -> 10
 
   while (currentNode) {
-    const currentVal = currentNode.val;
+    const currentVal = currentNode.val; // 8 -> 10
 
     if (currentVal < pVal && currentVal < qVal) {
       currentNode = currentNode.right;

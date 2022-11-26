@@ -1,20 +1,21 @@
+
 function findMinIdx(rotatedSortedArr) {
   let left = 0;
-  let right = rotatedSortedArr.length - 1;
+  let right = rotatedSortedArr.length - 1; //5
 
   if (rotatedSortedArr.length === 1) {
     return 0;
   }
 
-  if (rotatedSortedArr[left] < rotatedSortedArr[right]) {
-    // case 1
-    return 0;
-  }
-
+  // 4,5,6,1,2,3
   while (left < right) {
+    if (rotatedSortedArr[left] < rotatedSortedArr[right]) {
+      // case 1
+      return left;
+    }
     let mid = left + (right - left) / 2;
     if (rotatedSortedArr[mid] > rotatedSortedArr[right]) {
-      left = mid + 1;
+      left = mid + 1;// 3
     } // case 2
     else {
       right = mid;
@@ -40,8 +41,8 @@ function binarySearch(nums, target, left, right) {
 function search(nums, target) {
   const minIdx = findMinIdx(nums);
 
-  const left = binarySearch(nums, target, 0, minIdx - 1);
-  const right = binarySearch(nums, target, minIdx, nums.length - 1);
+  const left = binarySearch(nums, target, 0, minIdx - 1); // -1
+  const right = binarySearch(nums, target, minIdx, nums.length - 1); // 4
 
   return Math.max(left, right);
 }
