@@ -18,7 +18,7 @@ function findMinIdx(rotatedSortedArr) {
       left = mid + 1;// 3
     } // case 2
     else {
-      right = mid;
+      right = mid;  
     } // case 3
   }
   return left;
