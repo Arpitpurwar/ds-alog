@@ -2,7 +2,7 @@ var maxProfit = function (prices) {
   let maxProfit = 0;
   let cheapestPrice = prices[0];
 
-  for (let i = 0; i < prices.length; i++) {
+  for (let i = 1; i < prices.length; i++) {
     const price = prices[i];
 
     if (price < cheapestPrice) {
@@ -22,3 +22,5 @@ console.log(
   maxProfit([7, 1, 5, 3, 6, 4]) === 5
 );
 console.log("[7, 6, 4, 3, 1] expects 0", maxProfit([7, 6, 4, 3, 1]) === 0);
+
+console.log(maxProfit([1,2]));
