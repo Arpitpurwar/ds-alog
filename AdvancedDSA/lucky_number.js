@@ -17,32 +17,39 @@
 
     */
 
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
 var luckyNumbers  = function(matrix) {
-    let ans = [];
-   
-    for(let i = 0; i< matrix.length; i++){
-         let minIndex = 0;
-         let min = Number.MAX_VALUE;
-      
-          for(let j = 0; j< matrix[i].length; j++){
-              if(matrix[i][j] < min){
-                  min = matrix[i][j];
-                  minIndex = j;
-              }
-          }
-  
-          let isLucky = true;
-          for(let j=0; j< matrix.length; j++){
-              if(matrix[i][minIndex] < matrix[j][minIndex]){
-                  isLucky = false;
-                  break;
-              }
-          }
-  
-          if(isLucky){
-              ans.push(min);
-          }
-      }
-  
-      return ans;
-  };
+    let row = matrix.length;
+    let column = matrix[0].length;
+    let answer = [];
+
+    for(let i =0 ; i< row; i++){
+        let minIndex = 0;
+        let minValue = Number.MAX_VALUE;
+
+        for(let j = 0; j< column; j++){
+            if(matrix[i][j] < minValue){
+                minValue = matrix[i][j];
+                minIndex = j;
+            }
+        }
+
+        let isLucky = true;
+
+        for(k=0; k< row; k++){
+            if(matrix[k][minIndex] > minValue){
+                isLucky = false;
+                break;
+            }
+        }
+
+        if(isLucky){
+            answer.push(minValue);
+        }
+    }
+
+    return answer;
+};
