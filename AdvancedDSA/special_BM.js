@@ -3,7 +3,7 @@
  */
 // TC = o(row * col)
 // SC = o(row + col)
-ar numSpecial = function(mat) {
+var numSpecial = function(mat) {
     let row = mat.length;
     let col = mat[0].length;
 
