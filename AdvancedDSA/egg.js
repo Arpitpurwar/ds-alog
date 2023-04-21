@@ -8,7 +8,6 @@ function countEmptyCell(mat) {
   let count = 0;
 
   while (col < N) {
- console.log('ir', row, 'ic', col)
     while (mat[row][col] > 0){
         if (--row < 0){
         	return count;
