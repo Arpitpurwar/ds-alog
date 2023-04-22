@@ -19,13 +19,14 @@ console.log('arr', arr, 'vis', visited, 'temo', temp)
     }
     for (var i = 0; i < arr.length; i++)
     {
-        console.log('i while starting loop', i)
+console.log('i while starting loop', i)
         if (i > 0 && arr[i] == arr[i - 1] && !visited[i - 1])
         {
             continue;
         }
         if (visited[i])
         {
+  console.log('already visited')
             continue;
         }
         if (temp.length > 0)
@@ -40,12 +41,12 @@ console.log('arr', arr, 'vis', visited, 'temo', temp)
         visited[i] = true;
         (temp.push(arr[i]) > 0);
         this.solve(arr, visited, temp);
-        console.log('Before visited',i,visited);
-        console.log('Before temp', temp);
+  console.log('Before visited',i,visited);
+  console.log('Before temp', temp);
         visited[i] = false;
         temp.splice(temp.length - 1, 1);
-        console.log('after visited',i,visited);
-        console.log('after temp', temp);
+  console.log('after visited',i,visited);
+  console.log('after temp', temp);
     }
 }
 function perfectSquare(sum)
@@ -59,6 +60,18 @@ output = awesomeArrays(arr);
 console.log(output);
 
 
+
+
+
+
+
+
+
+
+
+
+
+// IDE code
 ///////////////////////%%%%%%%%%5###############
 output = 0;
 function awesomeArrays(arr)
